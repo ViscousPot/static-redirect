@@ -6,6 +6,7 @@
     <script>
       const params = new URLSearchParams(window.location.search);
       const target = params.get('url');
+      console.log(target);
       if (target && target.startsWith('http')) {
         window.location.replace(target);
       } else {
