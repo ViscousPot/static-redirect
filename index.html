@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>Redirecting...</title>
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const target = params.get('url');
-      console.log(target);
-      if (target && target.startsWith('http')) {
-        window.location.replace(target);
-      } else {
-        document.body.innerText = 'Invalid or missing URL parameter.';
-      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const target = params.get('url');
+        if (target && target.startsWith('http')) {
+            window.location.replace(target);
+        } else {
+            document.body.innerText = 'Invalid or missing URL parameter.';
+        }
+      });
     </script>
   </head>
   <body>
